@@ -249,18 +249,12 @@ public class Querys {
         update.executeUpdate("INSERT INTO Nominas VALUES(" + valors + ")");
     }
 
+
+    //Metodos para ver la nomina
     public double selectSalarioBase() throws Exception {
         conn = Conexion.getConnection();
         Statement update = conn.createStatement();
         ResultSet r = update.executeQuery("SELECT salari_base FROM Nominas ORDER BY idNomina DESC LIMIT 1");
-        if (r.next()) return (r.getDouble(1));
-        else return 0;
-    }
-
-    public double selectHorasExtra() throws Exception {
-        conn = Conexion.getConnection();
-        Statement update = conn.createStatement();
-        ResultSet r = update.executeQuery("SELECT horas_extra FROM Nominas ORDER BY idNomina DESC LIMIT 1");
         if (r.next()) return (r.getDouble(1));
         else return 0;
     }
@@ -285,6 +279,62 @@ public class Querys {
         conn = Conexion.getConnection();
         Statement update = conn.createStatement();
         ResultSet r = update.executeQuery("SELECT total_merital FROM Nominas ORDER BY idNomina DESC LIMIT 1");
+        if (r.next()) return (r.getDouble(1));
+        else return 0;
+    }
+    public double selectHorasExtra() throws Exception {
+        conn = Conexion.getConnection();
+        Statement update = conn.createStatement();
+        ResultSet r = update.executeQuery("SELECT horas_extra FROM Nominas ORDER BY idNomina DESC LIMIT 1");
+        if (r.next()) return (r.getDouble(1));
+        else return 0;
+    }
+    public double selectContingenciasComunes() throws Exception {
+        conn = Conexion.getConnection();
+        Statement update = conn.createStatement();
+        ResultSet r = update.executeQuery("SELECT contingencias_comunes FROM Nominas ORDER BY idNomina DESC LIMIT 1");
+        if (r.next()) return (r.getDouble(1));
+        else return 0;
+    }
+    public double selectDesempleo() throws Exception {
+        conn = Conexion.getConnection();
+        Statement update = conn.createStatement();
+        ResultSet r = update.executeQuery("SELECT desempleo FROM Nominas ORDER BY idNomina DESC LIMIT 1");
+        if (r.next()) return (r.getDouble(1));
+        else return 0;
+    }
+    public double selectFormacion() throws Exception {
+        conn = Conexion.getConnection();
+        Statement update = conn.createStatement();
+        ResultSet r = update.executeQuery("SELECT formacion FROM Nominas ORDER BY idNomina DESC LIMIT 1");
+        if (r.next()) return (r.getDouble(1));
+        else return 0;
+    }
+    public double selectHorasExtraDeducciones() throws Exception {
+        conn = Conexion.getConnection();
+        Statement update = conn.createStatement();
+        ResultSet r = update.executeQuery("SELECT deduc_horas_extra FROM Nominas ORDER BY idNomina DESC LIMIT 1");
+        if (r.next()) return (r.getDouble(1));
+        else return 0;
+    }
+    public double selectHorasExtraFMDeducciones() throws Exception {
+        conn = Conexion.getConnection();
+        Statement update = conn.createStatement();
+        ResultSet r = update.executeQuery("SELECT deduc_horas_extraFM FROM Nominas ORDER BY idNomina DESC LIMIT 1");
+        if (r.next()) return (r.getDouble(1));
+        else return 0;
+    }
+    public double selectIrpf() throws Exception {
+        conn = Conexion.getConnection();
+        Statement update = conn.createStatement();
+        ResultSet r = update.executeQuery("SELECT irpf FROM Nominas ORDER BY idNomina DESC LIMIT 1");
+        if (r.next()) return (r.getDouble(1));
+        else return 0;
+    }
+    public double selectSalarioFinal() throws Exception {
+        conn = Conexion.getConnection();
+        Statement update = conn.createStatement();
+        ResultSet r = update.executeQuery("SELECT salario_final FROM Nominas ORDER BY idNomina DESC LIMIT 1");
         if (r.next()) return (r.getDouble(1));
         else return 0;
     }

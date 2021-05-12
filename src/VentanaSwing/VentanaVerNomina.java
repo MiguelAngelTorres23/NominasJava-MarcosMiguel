@@ -63,17 +63,34 @@ public class VentanaVerNomina extends JFrame {
         setResizable(false);
         Querys q = new Querys();
 
-        String a = String.valueOf(q.selectSalarioBase());
-        String b = String.valueOf(q.selectAntiguadad());
-        String c = String.valueOf(q.selectHorasExtra());
-        String d = String.valueOf(q.selectHorasExtraFM());
-        String e = String.valueOf(q.selectTotalMerital());
+        String ssb = String.valueOf(q.selectSalarioBase());
+        String sa = String.valueOf(q.selectAntiguadad());
+        String she = String.valueOf(q.selectHorasExtra());
+        String shefm = String.valueOf(q.selectHorasExtraFM());
+        String stm = String.valueOf(q.selectTotalMerital());
 
-        textFieldSalarioBase.setText(a);
-        textFieldAntigüedad.setText(b);
-        textFieldHExtra.setText(c);
-        textFieldHExtraFM.setText(d);
-        textFieldTotalMerital.setText(e);
+        String scg = String.valueOf(q.selectContingenciasComunes());
+        String sd = String.valueOf(q.selectDesempleo());
+        String sf = String.valueOf(q.selectFormacion());
+        String shed = String.valueOf(q.selectHorasExtraDeducciones());
+        String shedfm = String.valueOf(q.selectHorasExtraFMDeducciones());
+        String sirpf = String.valueOf(q.selectIrpf());
+        String ssf = String.valueOf(q.selectSalarioFinal());
+
+        textFieldSalarioBase.setText(ssb);
+        textFieldAntigüedad.setText(sa);
+        textFieldHExtra.setText(she);
+        textFieldHExtraFM.setText(shefm);
+        textFieldTotalMerital.setText(stm);
+
+        textFieldContingénciasComunes.setText(scg);
+        textFieldDesempleo.setText(sd);
+        textFieldFomacion.setText(sf);
+        textFieldHExtraDeduc.setText(shed);
+
+        textFieldHExtraFMD.setText(shedfm);
+        textFieldIRPF.setText(sirpf);
+        textFieldSalarioFinal.setText(ssf);
 
     }
     public static void NewWindowsVerNomina() throws Exception {
